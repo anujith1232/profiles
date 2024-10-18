@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="{% static 'js/okay.js' %}"></script>
+</head>
+<body>
+{% if user.is_authenticated %}
+
+<h1> Hi {{ user.username }} Welcome to profile info page..</h1>
+<a class="btn btn-secondary" role="button" href="{% url 'profile_details' %}">Let's Go</a>
+{% endif %}
+</body>
+</html>

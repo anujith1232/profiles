@@ -1,0 +1,12 @@
+.card {
+            margin-bottom: 20px;
+        }
+        .rounded-image {
+            border-radius: 50%;
+        }
+        .label {
+            font-weight: bold;
+        }
+        .span {
+            margin-left: 5px;
+        }

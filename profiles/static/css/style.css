@@ -1,0 +1,75 @@
+/* Body styling */
+body {
+    background: pink;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Card styling */
+.card {
+    max-width: 600px;
+    height: 600px;
+    margin: 60px auto;
+    color: black;
+    background: black; /* Dark background for better contrast */
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Rounded image styling */
+.rounded-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 200px;
+    margin-top: 20px;
+    display: block;
+    border: 5px solid white;
+}
+
+/* Overlay text positioning */
+.card-img-overlay {
+    padding-top: 350px;
+    padding-left:120px;
+    height: auto;
+    width: 500px;
+    color: white;
+}
+
+/* Styling for text elements */
+.card-title, .card-text {
+    margin-bottom: 20px; /* Adds spacing between text elements */
+}
+
+/* Custom span for word spacing */
+.span {
+    margin-left: 20px;
+    font-weight: 300;/* Adjusts space between words */
+}
+
+/* Heading styling */
+h1 {
+    text-align: center;
+    color: #343a40;
+    margin-top: 20px;
+}
+.label{font-weight:bold;
+color:yellow;}
+h3{text-align:center;
+padding-top:10px;}
+
+.pagination {
+    display: flex;                /* Use flexbox for layout */
+    justify-content: center;      /* Center the pagination items horizontally */
+    margin: 20px 0;              /* Add some vertical space around pagination */
+}
+pagination .active .page-link {
+    background-color: #007bff;   /* Change background color of the active page */
+    color: white;
+
+ .pagination .page-item:hover .page-link {
+    background-color: #f8f9fa;
+    color: #007bff;
+}

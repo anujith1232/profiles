@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Update</title>
+    <link rel="stylesheet" href="{% static 'css/okay.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .form-label {
+            margin-bottom: 5px; /* Adjust this to control space between label and input */
+        }
+        .mt-10 {
+            margin-top: 10px; /* Adjust the value to move the image slightly down or up */
+        }
+        .rounded {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto; /* Center the image horizontally */
+        }
+        .mb-3 {
+            margin-bottom: 20px; /* Space between the image and the form */
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Update Profile</h1>
+
+        <!-- Display the profile image if it exists -->
+        {% if profiles.image %}
+            <img src="{{ profiles.image.url }}" alt="Profile Image" class="rounded mt-10 mb-20">
+        {% endif %}
+
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <div class="form-group">
+                <label for="username" class="form-label">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter the name" value="{{ profiles.username }}" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="bio" class="form-label">Bio:</label>
+                <input type="text" id="bio" name="bio" placeholder="Enter the bio" value="{{ profiles.bio }}" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="skills" class="form-label">Skills:</label>
+                <input type="text" id="skills" name="skills" placeholder="Enter the skills" value="{{ profiles.skills }}" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="contact_email" class="form-label">Contact Email:</label>
+                <input type="email" id="contact_email" name="contact_email" placeholder="Enter email" value="{{ profiles.contact_email }}" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="image" class="form-label">Update Profile Image:</label>
+                <input type="file" id="image" name="image" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+    </div>
+</body>
+</html>
